@@ -1,0 +1,251 @@
+/* Configurações Gerais / Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-shadow: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0f172a;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #06b6d4;
+}
+
+.nav-links a {
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #06b6d4;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), 
+                url('https://picsum.photos/id/180/1200/600') no-repeat center center/cover;
+    color: #fff;
+    padding: 6rem 0;
+    margin-bottom: 2rem;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.tag {
+    background-color: #06b6d4;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #cbd5e1;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #06b6d4;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #0891b2;
+}
+
+/* Layout Principal (Flexbox para separar Artigos e Sidebar) */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Grid de Artigos */
+.articles-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    flex: 2;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.category {
+    color: #06b6d4;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+}
+
+.card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.read-more {
+    font-weight: 600;
+    color: #0f172a;
+    transition: color 0.2s;
+}
+
+.read-more:hover {
+    color: #06b6d4;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar-widget {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.sidebar-widget h3 {
+    margin-bottom: 1rem;
+    color: #0f172a;
+    border-left: 4px solid #06b6d4;
+    padding-left: 0.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.newsletter-form input {
+    padding: 0.7rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Footer */
+.footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   MEDIA QUERIES (Responsividade)
+   ========================================== */
+
+/* Telas Médias (Tablets) */
+@media (min-width: 768px) {
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Telas Grandes (Desktops) */
+@media (min-width: 1024px) {
+    .main-content {
+        flex-direction: row; /* Coloca a sidebar do lado dos posts */
+    }
+
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mantém duas colunas de posts */
+    }
+}
